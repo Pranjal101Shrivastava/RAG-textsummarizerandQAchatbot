@@ -1,0 +1,1 @@
+A high-performance **Retrieval-Augmented Generation (RAG)** pipeline designed for deterministic context retrieval and abstractive summarization. This system implements a decoupled architecture for vector search and generation, optimized for the Gemini API ecosystem.
