@@ -1,0 +1,20 @@
+# Task: RAG-Based Text Summarizer & QA System
+
+- [x] Planning & Setup
+    - [x] Research free LLM and Embedding options (Gemini)
+    - [x] Create implementation plan
+- [x] Environment Configuration
+    - [x] Initialize Python environment
+    - [x] Install dependencies (langchain, faiss, streamlit, google-generativeai)
+- [x] Core RAG Pipeline Implementation
+    - [x] Document processing and chunking logic
+    - [x] Embedding generation and FAISS indexing
+    - [x] Retrieval-augmented generation for QA
+    - [x] Text summarization logic
+- [x] UI Development
+    - [x] Build Streamlit interface for file upload and interaction
+- [x] Verification & Evaluation
+    - [x] Test with long documents
+    - [x] Evaluate latency and relevance
+- [x] Documentation
+    - [x] Create walkthrough and instructions

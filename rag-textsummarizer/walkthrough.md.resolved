@@ -1,0 +1,48 @@
+# Walkthrough: RAG-Based Text Summarizer & QA System
+
+I have successfully built a Retrieval-Augmented Generation (RAG) pipeline that allows you to upload documents, generate high-quality summaries, and ask questions using Google's Gemini LLM and FAISS vector search.
+
+## Features Implemented
+
+- **Dual-Mode RAG Pipeline**: Specialized logic for both summarization (handling long contexts via map-reduce) and specific question-answering.
+- **FAISS Vector Storage**: Fast local similarity search for retrieving relevant context.
+- **Gemini Integration**: Uses `embedding-001` for high-dimensional text embeddings and `gemini-1.5-flash` for low-latency, reliable generation.
+- **Latency Tracking**: Real-time performance metrics for indexing, summarization, and QA.
+- **Clean UI**: A Streamlit interface designed for ease of use.
+
+## Project Structure
+
+- [app.py](file:///Users/pranjal/.gemini/antigravity/scratch/rag-summarizer/app.py): The main Streamlit dashboard.
+- [rag_logic.py](file:///Users/pranjal/.gemini/antigravity/scratch/rag-summarizer/rag_logic.py): Core RAG engine using LangChain.
+- [requirements.txt](file:///Users/pranjal/.gemini/antigravity/scratch/rag-summarizer/requirements.txt): Python dependencies.
+
+## How to Run
+
+1. **Obtain a Gemini API Key**:
+   Visit [Google AI Studio](https://aistudio.google.com/app/apikey) and create a free API key.
+
+2. **Navigate to the project directory**:
+   ```bash
+   cd /Users/pranjal/.gemini/antigravity/scratch/rag-summarizer
+   ```
+
+3. **Install dependencies** (if not already installed):
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Launch the application**:
+   ```bash
+   streamlit run app.py
+   ```
+
+5. **Interact**:
+   - Paste your API key in the sidebar.
+   - Upload any PDF or TXT file.
+   - Click **Index Document**.
+   - Use the **Generate Summary** button or the **QA** input to explore your document.
+
+## Evaluation Notes
+
+- **Latency**: Indexing is typically instantaneous for standard documents. Generation latency is optimized by using the `gemini-1.5-flash` model.
+- **Reliability**: The system uses `RecursiveCharacterTextSplitter` with overlap to ensure context is preserved across chunks, improving the relevance of retrieved information.
